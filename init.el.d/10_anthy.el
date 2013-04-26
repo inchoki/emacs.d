@@ -1,0 +1,22 @@
+(when (locate-library "anthy")
+  ; 変換モードでカーソルを緑にする
+  (defun toggle-anthy-mode ()
+    (interactive)
+    (anthy-mode)
+    (if anthy-minor-mode
+	(set-cursor-color "green")
+      (set-cursor-color "white")))
+  ; 最初に変換キーが押されて初めてロードする
+  (defun anthy-standup ()
+    (interactive)
+    (require 'anthy)
+    (setq default-input-method "japanese-anthy")
+    (global-set-key [kanji] 'toggle-anthy-mode)
+    (global-set-key [M-kanji] 'toggle-anthy-mode)
+    (global-set-key [zenkaku-hankaku] 'toggle-anthy-mode)
+    (global-set-key [M-zenkaku-hankaku] 'toggle-anthy-mode)
+    (anthy-mode))
+  (global-set-key [kanji] 'anthy-standup)
+  (global-set-key [M-kanji] 'anthy-standup)
+  (global-set-key [zenkaku-hankaku] 'anthy-standup)
+  (global-set-key [M-zenkaku-hankaku] 'anthy-standup))
