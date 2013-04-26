@@ -1,5 +1,5 @@
 ;; For Showing Line Number
-(global-limun-mode t)
+(global-linum-mode t)
 
 ;; For Drag and Drop Region Copy
 (setq mouse-drag-copy-region t)
