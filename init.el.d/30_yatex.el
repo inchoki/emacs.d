@@ -13,3 +13,4 @@
 (setq YaTeX-kanji-code nil)
 (setq YaTeX-use-LaTeX2e t)
 (setq YaTeX-use-AMS-LaTeX t)
+
