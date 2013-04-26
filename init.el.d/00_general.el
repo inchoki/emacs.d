@@ -6,4 +6,3 @@
 
 ;; For Clipboard Shareing
 (setq x-select-enable-clipboard t)
-
